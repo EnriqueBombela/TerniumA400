@@ -1,0 +1,247 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|c:\\users\\enrique\\source\\repos\\git\\multiappfrisa-main\\multiappfrisa\\pages\\timezoom.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|solutionrelative:multiappfrisa\\pages\\timezoom.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\multiappfrisa\\common\\sql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|solutionrelative:multiappfrisa\\common\\sql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\multiappfrisa\\common\\procesingimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|solutionrelative:multiappfrisa\\common\\procesingimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\multiappfrisa\\pages\\timezoom.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|solutionrelative:multiappfrisa\\pages\\timezoom.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\multiappfrisa\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|solutionrelative:multiappfrisa\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\multiappfrisa\\common\\maincontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|solutionrelative:multiappfrisa\\common\\maincontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\multiappfrisa\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|solutionrelative:multiappfrisa\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\multiappfrisa\\common\\opencv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|solutionrelative:multiappfrisa\\common\\opencv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\multiappfrisa\\models\\lepton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|solutionrelative:multiappfrisa\\models\\lepton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\multiappfrisa\\models\\configmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|solutionrelative:multiappfrisa\\models\\configmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\multiappfrisa\\common\\sqlmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|solutionrelative:multiappfrisa\\common\\sqlmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\multiappfrisa\\models\\tcpdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|solutionrelative:multiappfrisa\\models\\tcpdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\multiappfrisa\\pages\\framerenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|solutionrelative:multiappfrisa\\pages\\framerenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\multiappfrisa\\common\\tcpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1B61268-390C-437E-BCE7-E7F3C3873808}|MultiAppFrisa\\MultiAppFrisa.csproj|solutionrelative:multiappfrisa\\common\\tcpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainContainer.cs",
+              "DocumentMoniker": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Common\\MainContainer.cs",
+              "RelativeDocumentMoniker": "MultiAppFrisa\\Common\\MainContainer.cs",
+              "ToolTip": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Common\\MainContainer.cs",
+              "RelativeToolTip": "MultiAppFrisa\\Common\\MainContainer.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAuwPUCAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T22:42:32.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TimeZoom.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Pages\\TimeZoom.xaml.cs",
+              "RelativeDocumentMoniker": "MultiAppFrisa\\Pages\\TimeZoom.xaml.cs",
+              "ToolTip": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Pages\\TimeZoom.xaml.cs",
+              "RelativeToolTip": "MultiAppFrisa\\Pages\\TimeZoom.xaml.cs",
+              "ViewState": "AQIAAEwBAAAAAAAAAAA1wGYBAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T22:06:40.045Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SQL.cs",
+              "DocumentMoniker": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Common\\SQL.cs",
+              "RelativeDocumentMoniker": "MultiAppFrisa\\Common\\SQL.cs",
+              "ToolTip": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Common\\SQL.cs",
+              "RelativeToolTip": "MultiAppFrisa\\Common\\SQL.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAMwHMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T22:05:35.564Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TimeZoom.xaml",
+              "DocumentMoniker": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Pages\\TimeZoom.xaml",
+              "RelativeDocumentMoniker": "MultiAppFrisa\\Pages\\TimeZoom.xaml",
+              "ToolTip": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Pages\\TimeZoom.xaml",
+              "RelativeToolTip": "MultiAppFrisa\\Pages\\TimeZoom.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-03T01:40:14.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "MultiAppFrisa\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\MainPage.xaml.cs",
+              "RelativeToolTip": "MultiAppFrisa\\MainPage.xaml.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAQwDoAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T01:40:09.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProcesingImage.cs",
+              "DocumentMoniker": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Common\\ProcesingImage.cs",
+              "RelativeDocumentMoniker": "MultiAppFrisa\\Common\\ProcesingImage.cs",
+              "ToolTip": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Common\\ProcesingImage.cs",
+              "RelativeToolTip": "MultiAppFrisa\\Common\\ProcesingImage.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAowD8AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T23:16:31.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Opencv.cs",
+              "DocumentMoniker": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Common\\Opencv.cs",
+              "RelativeDocumentMoniker": "MultiAppFrisa\\Common\\Opencv.cs",
+              "ToolTip": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Common\\Opencv.cs",
+              "RelativeToolTip": "MultiAppFrisa\\Common\\Opencv.cs",
+              "ViewState": "AQIAAHkAAAAAAAAAAAAgwKEAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T23:00:26.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\MainPage.xaml",
+              "RelativeDocumentMoniker": "MultiAppFrisa\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\MainPage.xaml",
+              "RelativeToolTip": "MultiAppFrisa\\MainPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-07T02:22:15.701Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ConfigModel.cs",
+              "DocumentMoniker": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Models\\ConfigModel.cs",
+              "RelativeDocumentMoniker": "MultiAppFrisa\\Models\\ConfigModel.cs",
+              "ToolTip": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Models\\ConfigModel.cs",
+              "RelativeToolTip": "MultiAppFrisa\\Models\\ConfigModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T23:18:09.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Lepton.cs",
+              "DocumentMoniker": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Models\\Lepton.cs",
+              "RelativeDocumentMoniker": "MultiAppFrisa\\Models\\Lepton.cs",
+              "ToolTip": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Models\\Lepton.cs",
+              "RelativeToolTip": "MultiAppFrisa\\Models\\Lepton.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T23:18:07.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TCPData.cs",
+              "DocumentMoniker": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Models\\TCPData.cs",
+              "RelativeDocumentMoniker": "MultiAppFrisa\\Models\\TCPData.cs",
+              "ToolTip": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Models\\TCPData.cs",
+              "RelativeToolTip": "MultiAppFrisa\\Models\\TCPData.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T23:18:03.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FrameRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Pages\\FrameRenderer.cs",
+              "RelativeDocumentMoniker": "MultiAppFrisa\\Pages\\FrameRenderer.cs",
+              "ToolTip": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Pages\\FrameRenderer.cs",
+              "RelativeToolTip": "MultiAppFrisa\\Pages\\FrameRenderer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T23:18:00.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TCPClient.cs",
+              "DocumentMoniker": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Common\\TCPClient.cs",
+              "RelativeDocumentMoniker": "MultiAppFrisa\\Common\\TCPClient.cs",
+              "ToolTip": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Common\\TCPClient.cs",
+              "RelativeToolTip": "MultiAppFrisa\\Common\\TCPClient.cs",
+              "ViewState": "AQIAAGEAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T23:17:48.521Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SQLModel.cs",
+              "DocumentMoniker": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Common\\SQLModel.cs",
+              "RelativeDocumentMoniker": "MultiAppFrisa\\Common\\SQLModel.cs",
+              "ToolTip": "C:\\Users\\Enrique\\source\\repos\\Git\\MultiAppFrisa-main\\MultiAppFrisa\\Common\\SQLModel.cs",
+              "RelativeToolTip": "MultiAppFrisa\\Common\\SQLModel.cs",
+              "ViewState": "AQIAALYBAAAAAAAAAAAAALYBAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T23:17:20.808Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="PredictorV2.Pages.MyWebView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PredictorV2.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="PageLoaded">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="12,10,12,12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="800"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" BorderBrush="#FF707070" BorderThickness="1" Margin="0,0,0,0">
+            <WebView x:Name="WebViewControl"/>
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Right">
+                <Button Name="Back" Click="PlaybackCallBack" Background="Transparent" BorderBrush="Transparent" IsEnabled="True" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="60" Margin="-100,10,0,0">
+                    <Viewbox>
+                        <Grid>
+                            <SymbolIcon Name="PlayOnButton" Symbol="Previous" Visibility="Visible" Foreground="Gray"/>
+                        </Grid>
+                    </Viewbox>
+                </Button>
+                <Button Name="Refresh" Click="RefreshCallBack" Background="Transparent" BorderBrush="Transparent" IsEnabled="True" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="60" Margin="-150,10,0,0">
+                    <Viewbox>
+                        <Grid>
+                            <SymbolIcon Name="RefreshButton" Symbol="Refresh" Visibility="Visible" Foreground="Gray"/>
+                        </Grid>
+                    </Viewbox>
+            </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

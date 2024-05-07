@@ -1,0 +1,618 @@
+﻿<Page
+    x:Class="PredictorV2.Pages.TimeZoom"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PredictorV2.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="PageLoaded" Width="1962">
+    <Page.Resources>
+        <!-- Default style for Windows.UI.Xaml.Controls.Slider -->
+        <Style TargetType="Slider">
+            <Setter Property="Background" Value="{ThemeResource SystemControlForegroundBaseMediumLowBrush}" />
+            <Setter Property="BorderThickness" Value="{ThemeResource SliderBorderThemeThickness}" />
+            <Setter Property="Foreground" Value="{ThemeResource SystemControlHighlightAccentBrush}" />
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}" />
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}" />
+            <Setter Property="ManipulationMode" Value="None" />
+            <Setter Property="UseSystemFocusVisuals" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Slider">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.Resources>
+                                <Style TargetType="Thumb" x:Key="SliderThumbStyle">
+                                    <Setter Property="BorderThickness" Value="0" />
+                                    <Setter Property="Background" Value="{ThemeResource SystemControlForegroundAccentBrush}" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Thumb">
+                                                <Border Background="#FF0066"
+                      BorderBrush="{TemplateBinding BorderBrush}"
+                      BorderThickness="{TemplateBinding BorderThickness}"
+                      CornerRadius="4" />
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Grid.Resources>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HorizontalThumb"
+                                           Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightChromeHighBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="VerticalThumb"
+                                           Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightChromeHighBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HeaderContentPresenter"
+                                           Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlDisabledBaseMediumLowBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HorizontalDecreaseRect"
+                                           Storyboard.TargetProperty="Fill">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlDisabledChromeDisabledHighBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HorizontalTrackRect"
+                                           Storyboard.TargetProperty="Fill">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlDisabledChromeDisabledHighBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="VerticalDecreaseRect"
+                                           Storyboard.TargetProperty="Fill">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlDisabledChromeDisabledHighBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="VerticalTrackRect"
+                                           Storyboard.TargetProperty="Fill">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlDisabledChromeDisabledHighBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HorizontalThumb"
+                                           Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlDisabledChromeDisabledHighBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="VerticalThumb"
+                                           Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlDisabledChromeDisabledHighBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TopTickBar"
+                                           Storyboard.TargetProperty="Fill">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlDisabledBaseMediumLowBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BottomTickBar"
+                                           Storyboard.TargetProperty="Fill">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlDisabledBaseMediumLowBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="LeftTickBar"
+                                           Storyboard.TargetProperty="Fill">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlDisabledBaseMediumLowBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RightTickBar"
+                                           Storyboard.TargetProperty="Fill">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlDisabledBaseMediumLowBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HorizontalTrackRect"
+                                           Storyboard.TargetProperty="Fill">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlForegroundBaseMediumBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="VerticalTrackRect"
+                                           Storyboard.TargetProperty="Fill">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlForegroundBaseMediumBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HorizontalThumb"
+                                           Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="#FF0066" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="VerticalThumb"
+                                           Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightChromeAltLowBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter x:Name="HeaderContentPresenter"
+                      x:DeferLoadStrategy="Lazy"
+                      Visibility="Collapsed"
+                      Foreground="Yellow"
+                      Margin="{ThemeResource SliderHeaderThemeMargin}"
+                      Content="{TemplateBinding Header}"
+                      ContentTemplate="{TemplateBinding HeaderTemplate}"
+                      FontWeight="{ThemeResource SliderHeaderThemeFontWeight}"
+                      TextWrapping="Wrap" />
+                            <Grid x:Name="SliderContainer" Background="Transparent" Grid.Row="1" Control.IsTemplateFocusTarget="True">
+                                <Grid x:Name="HorizontalTemplate" MinHeight="44">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="18" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="18" />
+                                    </Grid.RowDefinitions>
+                                    <Rectangle x:Name="HorizontalTrackRect"
+                      Fill="#AEB6BF"
+                      Height="{ThemeResource SliderTrackThemeHeight}"
+                      Grid.Row="1"
+                      Grid.ColumnSpan="3" />
+                                    <Rectangle x:Name="HorizontalDecreaseRect"
+                      Fill="Yellow"
+                      Grid.Row="1" />
+                                    <TickBar x:Name="TopTickBar"
+                    Visibility="Collapsed"
+                    Fill="White"
+                    Height="{ThemeResource SliderOutsideTickBarThemeHeight}"
+                    VerticalAlignment="Bottom"
+                    Margin="0,0,0,4"
+                    Grid.ColumnSpan="3" />
+                                    <TickBar x:Name="HorizontalInlineTickBar"
+                    Visibility="Collapsed"
+                    Fill="{ThemeResource SystemControlBackgroundAltHighBrush}"
+                    Height="{ThemeResource SliderTrackThemeHeight}"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="3" />
+                                    <TickBar x:Name="BottomTickBar"
+                    Visibility="Collapsed"
+                    Fill="White"
+                    Height="{ThemeResource SliderOutsideTickBarThemeHeight}"
+                    VerticalAlignment="Top"
+                    Margin="0,4,0,0"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="3" />
+                                    <Thumb x:Name="HorizontalThumb"
+                  Background="{ThemeResource SystemControlForegroundAccentBrush}"
+                  Style="{StaticResource SliderThumbStyle}"
+                  DataContext="{TemplateBinding Value}"
+                  Height="38"
+                  Width="15"
+                  Grid.Row="0"
+                  Grid.RowSpan="3"
+                  Grid.Column="1"
+                  AutomationProperties.AccessibilityView="Raw" />
+                                </Grid>
+                                <Grid x:Name="VerticalTemplate" MinWidth="44" Visibility="Collapsed">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="18" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="18" />
+                                    </Grid.ColumnDefinitions>
+                                    <!--Ancho de la barra de referencia-->
+                                    <Rectangle x:Name="VerticalTrackRect"                                               
+                      Fill="{TemplateBinding Background}"
+                      Width="0"
+                      Grid.Column="1"
+                      Grid.RowSpan="3" />
+                                    <Rectangle x:Name="VerticalDecreaseRect"
+                      Fill="{TemplateBinding Foreground}"
+                      Grid.Column="1"
+                      Grid.Row="2" />
+                                    <TickBar x:Name="LeftTickBar"
+                    Visibility="Collapsed"
+                    Fill="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
+                    Width="{ThemeResource SliderOutsideTickBarThemeHeight}"
+                    HorizontalAlignment="Right"
+                    Margin="0,0,4,0"
+                    Grid.RowSpan="3" />
+                                    <!--Ancho de la barra-->
+                                    <TickBar x:Name="VerticalInlineTickBar" 
+                    Visibility="Collapsed"
+                    Fill="{ThemeResource SystemControlBackgroundAltHighBrush}"
+                    Width="12"
+                    Grid.Column="1"
+                    Grid.RowSpan="3" />
+                                    <TickBar x:Name="RightTickBar"
+                    Visibility="Collapsed"
+                    Fill="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
+                    Width="{ThemeResource SliderOutsideTickBarThemeHeight}"
+                    HorizontalAlignment="Left"
+                    Margin="4,0,0,0"
+                    Grid.Column="2"
+                    Grid.RowSpan="3" />
+                                    <Thumb x:Name="VerticalThumb"
+                  Background="{ThemeResource SystemControlForegroundAccentBrush}"
+                  Style="{StaticResource SliderThumbStyle}"
+                  DataContext="{TemplateBinding Value}"
+                  Width="0"
+                  Height="0"
+                  Grid.Row="1"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="3"
+                  AutomationProperties.AccessibilityView="Raw"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+
+    <StackPanel Orientation="Horizontal">
+        <Grid x:Name="Target" Background="#1A1A1A">
+            <Canvas x:Name="Controls" Background="Transparent" Width="1964" Height="700" HorizontalAlignment ="Center" VerticalAlignment="Top" Margin="0,7,0,0">
+                <Line Canvas.Top="20" Canvas.Left="70" X1="0" Y1="250" X2="820" Y2="250" Stroke="Transparent" StrokeThickness="2"/>
+                <TextBlock Canvas.Top="438" Canvas.Left="1163" Text="0" FontSize ="15" Foreground="Cyan"/>
+                <TextBlock Canvas.Top="258" Canvas.Left="845" Text="200" FontSize ="15" Foreground="Cyan"/>
+                <TextBlock Canvas.Top="90" Canvas.Left="845" Text="400" FontSize ="15" Foreground="Cyan" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBlock Canvas.Top="178" Canvas.Left="845" Text="300" FontSize ="15" Foreground="Cyan"/>
+                <TextBlock Canvas.Top="340" Canvas.Left="845" Text="100" FontSize ="15" Foreground="Cyan"/>
+
+
+                <Canvas x:Name="PicDañadaCanvas" Margin="640,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="160" Height="120"  Visibility="Visible"/>
+
+                <TextBlock x:Name ="lblTime1" Canvas.Top="438" Canvas.Left="1004" Text="  0" FontSize ="15" Foreground="Cyan" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                <TextBlock x:Name ="lblTime1a" Canvas.Top="422" Canvas.Left="853" Text="  0" FontSize ="15" Foreground="Cyan" Visibility="Visible"/>
+                <TextBlock x:Name ="lblTime1b" Canvas.Top="436" Canvas.Left="1439" Text="  0" FontSize ="15" Foreground="Cyan" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBlock x:Name ="lblTime1c" Canvas.Top="438" Canvas.Left="1296" Text="  0" FontSize ="15" Foreground="Cyan" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBlock x:Name ="lblTime2" Canvas.Top="438" Canvas.Left="865" Text="  0" FontSize ="15" Foreground="Cyan" Visibility="Visible" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Polyline x:Name="Chart6"  Stroke="Transparent" StrokeThickness="2" Canvas.Top="10" Canvas.Left="70">
+                    <Polyline.RenderTransform>
+                        <ScaleTransform x:Name="UpScale6"/>
+                    </Polyline.RenderTransform>
+                </Polyline>
+                <Polyline x:Name="Chart7"  Stroke="Transparent" StrokeThickness="2" Canvas.Top="10" Canvas.Left="70">
+                    <Polyline.RenderTransform>
+                        <ScaleTransform x:Name="UpScale7"/>
+                    </Polyline.RenderTransform>
+                </Polyline>
+                <Ellipse x:Name ="Dominant0" Fill="#FF0000" Height="14" Width="14" Visibility="Collapsed" Canvas.Top="10" Canvas.Left="70"/>
+                <Ellipse x:Name ="Dominant1" Fill="#FF8000" Height="14" Width="14" Visibility="Collapsed" Canvas.Top="10" Canvas.Left="70"/>
+                <Ellipse x:Name ="Dominant2" Fill="#F7FE2E" Height="14" Width="14" Visibility="Collapsed" Canvas.Top="10" Canvas.Left="70"/>
+                <Ellipse x:Name ="Dominant3" Fill="#80FF00" Height="14" Width="14" Visibility="Collapsed" Canvas.Top="10" Canvas.Left="70"/>
+                <Ellipse x:Name ="Dominant4" Fill="#2EFEF7" Height="14" Width="14" Visibility="Collapsed" Canvas.Top="10" Canvas.Left="70"/>
+                <Ellipse x:Name ="Dominant5" Fill="#5882FA" Height="14" Width="14" Visibility="Collapsed" Canvas.Top="10" Canvas.Left="70"/>
+                <Ellipse x:Name ="Dominant6" Fill="#CC2EFA" Height="14" Width="14" Visibility="Collapsed" Canvas.Top="10" Canvas.Left="70"/>
+                <Ellipse x:Name ="Dominant7" Fill="#F781D8" Height="14" Width="14" Visibility="Collapsed" Canvas.Top="10" Canvas.Left="70"/>
+                <Polyline x:Name="ChartInt0"  Stroke="#FF0000" StrokeThickness="2" Canvas.Top="10" Canvas.Left="70">
+                    <Polyline.RenderTransform>
+                        <ScaleTransform x:Name="UpScale8"/>
+                    </Polyline.RenderTransform>
+                </Polyline>
+                <Polyline x:Name="ChartInt1"  Stroke="#FF8000" StrokeThickness="2" Canvas.Top="10" Canvas.Left="70"/>
+                <Polyline x:Name="ChartInt2"  Stroke="#F7FE2E" StrokeThickness="2" Canvas.Top="10" Canvas.Left="70"/>
+                <Polyline x:Name="ChartInt3"  Stroke="#80FF00" StrokeThickness="2" Canvas.Top="10" Canvas.Left="70"/>
+                <Polyline x:Name="ChartInt4"  Stroke="#2EFEF7" StrokeThickness="2" Canvas.Top="10" Canvas.Left="70"/>
+                <Polyline x:Name="ChartInt5"  Stroke="#5882FA" StrokeThickness="2" Canvas.Top="10" Canvas.Left="70"/>
+                <Polyline x:Name="ChartInt6"  Stroke="#CC2EFA" StrokeThickness="2" Canvas.Top="10" Canvas.Left="70"/>
+                <Polyline x:Name="ChartInt7"  Stroke="#F781D8" StrokeThickness="2" Canvas.Top="10" Canvas.Left="70"/>
+                <Line Canvas.Top="20" Canvas.Left="70" X1="410" Y1="-20" X2="410" Y2="480" Stroke="Transparent" StrokeThickness="2"/>
+                <Line Canvas.Top="20" Canvas.Left="70" X1="0" Y1="83" X2="820" Y2="83" Stroke="Transparent" StrokeThickness="1"/>
+                <Line Canvas.Top="20" Canvas.Left="70" X1="0" Y1="166" X2="820" Y2="166" Stroke="Transparent" StrokeThickness="1"/>
+                <Line Canvas.Top="20" Canvas.Left="70" X1="0" Y1="333" X2="820" Y2="333" Stroke="Transparent" StrokeThickness="1"/>
+                <Line Canvas.Top="20" Canvas.Left="70" X1="0" Y1="416" X2="820" Y2="416" Stroke="Transparent" StrokeThickness="1"/>
+                <Button x:Name="PlayOn" Click="PlayCallBack" BorderBrush="#FFFF0066" IsEnabled="False" FontSize="20" HorizontalAlignment="Left" Canvas.Left="100" Canvas.Top="740" VerticalAlignment="Top" Height="40" Width="60">
+                    <Viewbox>
+                        <Grid>
+                            <SymbolIcon x:Name="PlayOnButton" Symbol="Play" Visibility="Collapsed" Foreground="#FFFF0066"/>
+                        </Grid>
+                    </Viewbox>
+                </Button>
+                <TextBlock x:Name="TxRMSV" Canvas.Top="600" Canvas.Left="100" Text="Freq" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="RMSV0" Canvas.Top="600" Canvas.Left="180" Text="0.0000" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="RMSV1" Canvas.Top="600" Canvas.Left="260" Text="0.0000" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="RMSV2" Canvas.Top="600" Canvas.Left="340" Text="0.0000" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="RMSV3" Canvas.Top="600" Canvas.Left="420" Text="0.0000" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="RMSV4" Canvas.Top="600" Canvas.Left="500" Text="0.0000" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="RMSV5" Canvas.Top="600" Canvas.Left="580" Text="0.0000" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="RMSV6" Canvas.Top="600" Canvas.Left="660" Text="0.0000" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="RMSV7" Canvas.Top="600" Canvas.Left="740" Text="0.0000" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="TxRMSH" Canvas.Top="620" Canvas.Left="100" Text="HiFq" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="RMSH0" Canvas.Top="620" Canvas.Left="180" Text="0.0000" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="RMSH1" Canvas.Top="620" Canvas.Left="260" Text="0.0000" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="RMSH2" Canvas.Top="620" Canvas.Left="340" Text="0.0000" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="RMSH3" Canvas.Top="620" Canvas.Left="420" Text="0.0000" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="RMSH4" Canvas.Top="620" Canvas.Left="500" Text="0.0000" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="RMSH5" Canvas.Top="620" Canvas.Left="580" Text="0.0000" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="RMSH6" Canvas.Top="620" Canvas.Left="660" Text="0.0000" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="RMSH7" Canvas.Top="620" Canvas.Left="740" Text="0.0000" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+
+                <TextBlock x:Name="Debug" Canvas.Top="660" Canvas.Left="370" Text="Tracing....." FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+                <TextBlock x:Name="FPBlock" Canvas.Top="660" Canvas.Left="600" Text="FP:80" FontSize ="20" Foreground="Cyan" Visibility="Collapsed"/>
+
+                <ComboBox x:Name="cmbOpencv" FontSize="12" Canvas.Left="640" Foreground="Black" Background="Cyan" BorderBrush="Cyan" Canvas.Top="423" Width="155" SelectionChanged="ComboBox_SelectionChanged2" Height="50">
+                    <ComboBoxItem IsSelected="True" Content=""/>
+                    <ComboBoxItem Content="AUTUMN"/>
+                    <ComboBoxItem Content="BONE"/>
+                    <ComboBoxItem Content="Original"/>
+                    <ComboBoxItem Content="WINTER"/>
+                    <ComboBoxItem Content="RAINBOW"/>
+                    <ComboBoxItem Content="OCEAN"/>
+                    <ComboBoxItem Content="SUMMER"/>
+                    <ComboBoxItem Content="SPRING"/>
+                    <ComboBoxItem Content="COOL"/>
+                    <ComboBoxItem Content="HSV"/>
+                    <ComboBoxItem Content="PINK"/>
+                    <ComboBoxItem Content="HOT"/>
+                    <ComboBoxItem Content="PARULA"/>
+                    <ComboBoxItem Content="MAGMA"/>
+                </ComboBox>
+                <Rectangle Height="317" Canvas.Left="1506" Stroke="#FFF5EBEB" Canvas.Top="107" Width="412" FocusVisualPrimaryBrush="#FFF5EDED"/>
+                <TextBlock Canvas.Left="1525" TextWrapping="Wrap" Text="Estatus:" Canvas.Top="118" Foreground="#FFF9F8F8" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.53,-0.25"/>
+                <TextBlock TextWrapping="Wrap" Text="TIEMPO REAL CAM1" Foreground="#FFF3EEEE" FontSize="24" HorizontalAlignment="Center" Canvas.Left="230" Canvas.Top="60" VerticalAlignment="Top"/>
+                <TextBlock Canvas.Left="1525" TextWrapping="Wrap" Text="Fecha de ultima captura:" Canvas.Top="150" Foreground="#FFF9F8F8" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
+                <TextBlock Canvas.Left="1525" TextWrapping="Wrap" Text="Temperaturas:" Canvas.Top="214" Foreground="#FFF9F8F8" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
+                <TextBlock Canvas.Left="1525" TextWrapping="Wrap" Text="No de Recipiente:" Canvas.Top="357" Foreground="#FFF9F8F8" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
+                <TextBlock Canvas.Left="1525" TextWrapping="Wrap" Text="Usos del Recipiente:" Canvas.Top="389" Foreground="#FFF9F8F8" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
+                <TextBlock x:Name="FechaCam1" Canvas.Left="1525" TextWrapping="Wrap" Text="Fecha" Canvas.Top="182" Foreground="#FFF9F8F8" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
+                <TextBlock x:Name="EstatusCam1" Canvas.Left="1613" TextWrapping="Wrap" Text="Estado" Canvas.Top="118" Foreground="#FFF9F8F8" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBlock x:Name="RecipienteUsoCam1" Canvas.Left="1712" TextWrapping="Wrap" Text="Numero" Canvas.Top="389" Foreground="#FFF9F8F8" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBlock x:Name="TemperaturesCam1" Canvas.Left="1525" TextWrapping="Wrap" Text="Temperatura" Canvas.Top="253" Foreground="#FFF9F8F8" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBlock x:Name="RecipienteCam1" Canvas.Left="1697" TextWrapping="Wrap" Text="Numero" Canvas.Top="357" Foreground="#FFF9F8F8" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock TextWrapping="Wrap" Text="TIEMPO REAL CAM2" Foreground="#FFF3EEEE" FontSize="24" Canvas.Left="230" Canvas.Top="521" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBlock Canvas.Top="731" Canvas.Left="843" Text="200" FontSize ="15" Foreground="Cyan" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock Canvas.Top="563" Canvas.Left="843" Text="400" FontSize ="15" Foreground="Cyan" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock Canvas.Top="651" Canvas.Left="843" Text="300" FontSize ="15" Foreground="Cyan" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock Canvas.Top="813" Canvas.Left="843" Text="100" FontSize ="15" Foreground="Cyan" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock x:Name ="lblTime2_Copiar" Canvas.Top="903" Canvas.Left="1149" Text="  0" FontSize ="15" Foreground="Cyan" Visibility="Visible" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock x:Name ="lblTime2_Copiar1" Canvas.Top="889" Canvas.Left="849" Text="  0" FontSize ="15" Foreground="Cyan" Visibility="Visible" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock x:Name ="lblTime2_Copiar2" Canvas.Top="903" Canvas.Left="1012" Text="  0" FontSize ="15" Foreground="Cyan" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBlock x:Name ="lblTime2_Copiar3" Canvas.Top="903" Canvas.Left="1296" Text="  0" FontSize ="15" Foreground="Cyan" Visibility="Visible" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock x:Name ="lblTime2_Copiar4" Canvas.Top="903" Canvas.Left="1439" Text="  0" FontSize ="15" Foreground="Cyan" Visibility="Visible" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock x:Name ="lblTime2_Copiar5" Canvas.Top="903" Canvas.Left="865" Text="  0" FontSize ="15" Foreground="Cyan" Visibility="Visible" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Rectangle Height="317" Canvas.Left="1507" Stroke="#FFF5EBEB" Canvas.Top="573" Width="412" FocusVisualPrimaryBrush="#FFF5EDED"/>
+                <TextBlock Canvas.Left="1526" TextWrapping="Wrap" Text="Estatus:" Canvas.Top="584" Foreground="#FFF9F8F8" FontSize="20" RenderTransformOrigin="0.53,-0.25" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Canvas.Left="1525" TextWrapping="Wrap" Text="Fecha de ultima captura:" Canvas.Top="616" Foreground="#FFF9F8F8" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Canvas.Left="1525" TextWrapping="Wrap" Text="Temperaturas:" Canvas.Top="680" Foreground="#FFF9F8F8" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Canvas.Left="1526" TextWrapping="Wrap" Text="No de Recipiente:" Canvas.Top="823" Foreground="#FFF9F8F8" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Canvas.Left="1526" TextWrapping="Wrap" Text="Usos del Recipiente:" Canvas.Top="855" Foreground="#FFF9F8F8" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock x:Name="FechaCam2" Canvas.Left="1526" TextWrapping="Wrap" Text="Fecha" Canvas.Top="648" Foreground="#FFF9F8F8" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock x:Name="EstatusCam2" Canvas.Left="1614" TextWrapping="Wrap" Text="Estado" Canvas.Top="584" Foreground="#FFF9F8F8" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock x:Name="RecipienteUsoCam2" Canvas.Left="1712" TextWrapping="Wrap" Text="Numero" Canvas.Top="855" Foreground="#FFF9F8F8" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock x:Name="TemperaturesCam2" Canvas.Left="1526" TextWrapping="Wrap" Text="Temperatura" Canvas.Top="719" Foreground="#FFF9F8F8" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock x:Name="RecipienteCam2" Canvas.Left="1697" TextWrapping="Wrap" Text="Numero" Canvas.Top="823" Foreground="#FFF9F8F8" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock TextWrapping="Wrap" Text="INFORMACION CAMARA 2" Foreground="#FFF3EEEE" FontSize="24" HorizontalAlignment="Center" Canvas.Left="1317" Canvas.Top="515" VerticalAlignment="Top"/>
+
+            </Canvas>
+
+
+            <Grid x:Name="RootGrid" Margin="12,10,12,12">
+
+
+                <Grid.Resources>
+                    <Style x:Key="InkToolBarActionButton" TargetType="Button">
+                        <Setter Property="MinWidth" Value="{ThemeResource InkToolbarButtonWidth}"/>
+                        <Setter Property="MinHeight" Value="{ThemeResource InkToolbarButtonHeight}"/>
+                        <Setter Property="MaxHeight" Value="{ThemeResource InkToolbarButtonHeight}"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="Background" Value="{ThemeResource InkToolbarButtonBackgroundThemeBrush}"/>
+                        <Setter Property="Foreground" Value="{ThemeResource InkToolbarButtonForegroundThemeBrush}"/>
+                    </Style>
+                </Grid.Resources>
+
+
+
+                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <InkToolbar x:Name="inkToolBar" HorizontalAlignment="Left" VerticalAlignment="Top" TargetInkCanvas="{x:Bind Path=inkCanvas}" InitialControls="None">
+                        <InkToolbarBallpointPenButton SelectedStrokeWidth="2" Visibility="Collapsed"/>
+                        <InkToolbarPencilButton Visibility="Collapsed"/>
+                        <InkToolbarEraserButton Visibility="Collapsed"/>
+                        <InkToolbarStencilButton Visibility="Collapsed"/>
+                    </InkToolbar>
+                    <Line Y1="0"
+               Y2="{ThemeResource InkToolbarButtonHeight}"
+               HorizontalAlignment="Stretch"
+               Width="2"
+               Height="{ThemeResource InkToolbarButtonHeight}"
+               StrokeThickness="1"
+               Stroke="Gray"/>
+
+                </StackPanel>
+
+                <Grid BorderBrush="AliceBlue" BorderThickness="2" Background="White" x:Name="gridBox" Margin="98,103,1362,515" Width="480" Height="360">
+                    <Image x:Name="PicDañada" Stretch="Uniform" Width="{Binding ActualWidth, ElementName=gridBox}" Height="{Binding ActualHeight, ElementName=gridBox}" />
+                    <Canvas x:Name="canvas" Width="{Binding ActualWidth, ElementName=gridBox}" Height="{Binding ActualHeight, ElementName=gridBox}">
+                        <Canvas.Resources>
+                            <SolidColorBrush x:Key="PolygonBrush" Color="Blue" />
+                            <SolidColorBrush x:Key="EllipseBrush" Color="Green" />
+                            <Style TargetType="Polygon">
+                                <Setter Property="Stroke" Value="Blue"/>
+                                <Setter Property="StrokeThickness" Value="2"/>
+                            </Style>
+                            <Style TargetType="Ellipse">
+                                <Setter Property="Stroke" Value="Green"/>
+                                <Setter Property="StrokeThickness" Value="2"/>
+                            </Style>
+                        </Canvas.Resources>
+                    </Canvas>
+                    <InkCanvas x:Name="inkCanvas" Width="{Binding ActualWidth, ElementName=gridBox}" Height="{Binding ActualHeight, ElementName=gridBox}"/>
+                </Grid>
+                <!-- Polyline para grafica 1-->
+                <Rectangle Margin="865,103,499,545" Width="576" Height="330" Fill="Transparent" Stroke="#FFF50829" StrokeThickness="2" HorizontalAlignment ="Left" VerticalAlignment="Top"/>
+                <!--Rectangulo para grafica 2 -->
+                <Rectangle Margin="865,567,0,0" Width="576" Height="330" Fill="Transparent" Stroke="#FFF50829" StrokeThickness="2" HorizontalAlignment ="Left" VerticalAlignment="Top"/>
+
+                <!-- Polyline para grafica 1-->
+                <Grid x:Name="Charts9" Background="Transparent" Margin="865,103,499,545" Width="576" Height="330" >
+                    <Rectangle Width="576" Height="330" Fill="Transparent" Stroke="Transparent" StrokeThickness="2"/>
+                    <Line Canvas.Top="20" Canvas.Left="70" X1="0" Y1="165" X2="615" Y2="165" Stroke="Cyan" StrokeThickness="1" Opacity=".3"/>
+                    <Line Canvas.Top="20" Canvas.Left="70" X1="0" Y1="82" X2="615" Y2="82" Stroke="Cyan" StrokeThickness="1" Opacity=".3"/>
+                    <Line Canvas.Top="20" Canvas.Left="70" X1="0" Y1="247" X2="615" Y2="247" Stroke="Cyan" StrokeThickness="1" Opacity=".3"/>
+                    <Line Canvas.Top="20" Canvas.Left="70" X1="288" Y1="0" X2="288" Y2="330" Stroke="Cyan" StrokeThickness="1" Opacity=".3"/>
+                    <Line Canvas.Top="20" Canvas.Left="70" X1="144" Y1="0" X2="144" Y2="330" Stroke="Cyan" StrokeThickness="1" Opacity=".3"/>
+                    <Line Canvas.Top="20" Canvas.Left="70" X1="432" Y1="0" X2="432" Y2="330" Stroke="Cyan" StrokeThickness="1" Opacity=".3"/>
+                    <Polyline x:Name="Chart9"  Stroke="#FF10EAEF" StrokeThickness="2" FocusVisualPrimaryBrush="#FF15F3EE" FocusVisualSecondaryBrush="#99961818"/>
+                </Grid>
+                <!-- Polyline para grafica 2-->
+                <Grid x:Name="Charts20" Background="Transparent" Margin="865,567,499,81" Width="576" Height="330" >
+                    <Rectangle Width="576" Height="330" Fill="Transparent" Stroke="Transparent" StrokeThickness="2"/>
+                    <Line Canvas.Top="20" Canvas.Left="70" X1="0" Y1="165" X2="615" Y2="165" Stroke="Cyan" StrokeThickness="1" Opacity=".3"/>
+                    <Line Canvas.Top="20" Canvas.Left="70" X1="0" Y1="82" X2="615" Y2="82" Stroke="Cyan" StrokeThickness="1" Opacity=".3"/>
+                    <Line Canvas.Top="20" Canvas.Left="70" X1="0" Y1="247" X2="615" Y2="247" Stroke="Cyan" StrokeThickness="1" Opacity=".3"/>
+                    <Line Canvas.Top="20" Canvas.Left="70" X1="288" Y1="0" X2="288" Y2="330" Stroke="Cyan" StrokeThickness="1" Opacity=".3"/>
+                    <Line Canvas.Top="20" Canvas.Left="70" X1="144" Y1="0" X2="144" Y2="330" Stroke="Cyan" StrokeThickness="1" Opacity=".3"/>
+                    <Line Canvas.Top="20" Canvas.Left="70" X1="432" Y1="0" X2="432" Y2="330" Stroke="Cyan" StrokeThickness="1" Opacity=".3"/>
+                    <Polyline x:Name="Chart201"  Stroke="#FF540712" StrokeThickness="2" FocusVisualPrimaryBrush="#FF881D1D" FocusVisualSecondaryBrush="#99961818"/>
+                </Grid>
+                <!-- Polyline para grafica 1-->
+                <Grid x:Name="Charts09" Background="Transparent" Margin="865,103,499,545" Width="576" Height="330" HorizontalAlignment ="Left" VerticalAlignment="Top">
+                    <Rectangle Width="576" Height="330" Fill="Transparent" Stroke="Transparent" StrokeThickness="2"/>
+                    <Polyline x:Name="Chart09" Stroke="#03A9F4" StrokeThickness="8.5" Opacity=".3"/>
+                </Grid>
+                <!-- Polyline para grafica 2-->
+                <Grid x:Name="Charts21" Background="Transparent" Margin="865,567,0,0" Width="576" Height="330" HorizontalAlignment ="Left" VerticalAlignment="Top">
+                    <Rectangle Width="576" Height="330" Fill="Transparent" Stroke="Transparent" StrokeThickness="2" Margin="0,464,0,-464"/>
+                    <Polyline x:Name="Chart21" Stroke="#03A9F4" StrokeThickness="8.5" Opacity=".3" Margin="0,464,0,-464"/>
+                </Grid>
+                <!-- Polyline para grafica 1-->
+                <Grid x:Name="Charts10" Background="Transparent" Margin="865,103,499,545" Width="576" Height="330" HorizontalAlignment ="Left" VerticalAlignment="Top">
+                    <Rectangle Width="576" Height="330" Fill="Transparent" Stroke="Transparent" StrokeThickness="2"/>
+                    <Polyline x:Name="Chart10"  Stroke="#3AFE00" StrokeThickness="2"/>
+                </Grid>
+
+                <Grid x:Name="Charts010" Background="Transparent" Margin="865,103,499,545" Width="576" Height="330" HorizontalAlignment ="Left" VerticalAlignment="Top">
+                    <Rectangle Width="576" Height="330" Fill="Transparent" Stroke="Transparent" StrokeThickness="2"/>
+                    <Polyline x:Name="Chart010" Stroke="#3AFE00" StrokeThickness="8.5" Opacity=".3"/>
+                </Grid>
+                <!-- Polyline para grafica 2-->
+                <Grid x:Name="Charts22" Background="Transparent" Margin="865,567,0,0" Width="576" Height="330" HorizontalAlignment ="Left" VerticalAlignment="Top">
+                    <Rectangle Width="576" Height="330" Fill="Transparent" Stroke="Transparent" StrokeThickness="2" Margin="0,464,0,-464"/>
+                    <Polyline x:Name="Chart22"  Stroke="#3AFE00" StrokeThickness="2"/>
+                </Grid>
+
+                <Grid x:Name="Charts23" Background="Transparent" Margin="865,567,0,0" Width="576" Height="330" HorizontalAlignment ="Left" VerticalAlignment="Top">
+                    <Rectangle Width="576" Height="330" Fill="Transparent" Stroke="Transparent" StrokeThickness="2"/>
+                    <Polyline x:Name="Chart23" Stroke="#3AFE00" StrokeThickness="8.5" Opacity=".3"/>
+                </Grid>
+                <!-- Polyline para grafica 1-->
+                <Grid x:Name="Charts11" Background="Transparent" Margin="865,103,499,545" Width="576" Height="330" HorizontalAlignment ="Left" VerticalAlignment="Top">
+                    <Rectangle Width="576" Height="330" Fill="Transparent" Stroke="Transparent" StrokeThickness="2"/>
+                    <Polyline x:Name="Chart11"  Stroke="#FF00CD" StrokeThickness="2"/>
+                </Grid>
+
+                <Grid x:Name="Charts011" Background="Transparent" Margin="865,103,499,545" Width="576" Height="330" HorizontalAlignment ="Left" VerticalAlignment="Top">
+                    <Rectangle Height="330" Fill="Transparent" Stroke="Transparent" StrokeThickness="2"/>
+                    <Polyline x:Name="Chart011" Stroke="#FF00CD" StrokeThickness="8.5" Opacity=".3"/>
+                </Grid>
+                <!-- Polyline para grafica 2-->
+                <Grid x:Name="Charts24" Background="Transparent" Margin="865,567,0,0" Width="576" Height="330" HorizontalAlignment ="Left" VerticalAlignment="Top">
+                    <Rectangle Width="576" Height="330" Fill="Transparent" Stroke="Transparent" StrokeThickness="2"/>
+                    <Polyline x:Name="Chart24"  Stroke="#FF00CD" StrokeThickness="2"/>
+                </Grid>
+
+                <Grid x:Name="Charts25" Background="Transparent" Margin="865,567,0,0" Width="576" Height="330" HorizontalAlignment ="Left" VerticalAlignment="Top">
+                    <Rectangle Height="330" Fill="Transparent" Stroke="Transparent" StrokeThickness="2"/>
+                    <Polyline x:Name="Chart25" Stroke="#FF00CD" StrokeThickness="8.5" Opacity=".3"/>
+                </Grid>
+
+
+
+
+
+
+
+                <TextBlock HorizontalAlignment="Left" Margin="1313,49,0,0" TextWrapping="Wrap" Text="INFORMACION CAMARA 1" VerticalAlignment="Top" Foreground="#FFF3EEEE" FontSize="24"/>
+                <Grid BorderBrush="AliceBlue" BorderThickness="2" Background="White" x:Name="gridBox_Copiar" Margin="98,567,1362,51" Width="480" Height="360">
+                    <Image x:Name="PicDañada1" Stretch="Uniform" Width="{Binding ActualWidth, ElementName=gridBox}" Height="{Binding ActualHeight, ElementName=gridBox}" />
+                    <Canvas x:Name="canvas1" Width="{Binding ActualWidth, ElementName=gridBox}" Height="{Binding ActualHeight, ElementName=gridBox}">
+                        <Canvas.Resources>
+                            <SolidColorBrush x:Key="PolygonBrush" Color="Blue" />
+                            <SolidColorBrush x:Key="EllipseBrush" Color="Green" />
+                            <Style TargetType="Polygon">
+                                <Setter Property="Stroke" Value="Blue"/>
+                                <Setter Property="StrokeThickness" Value="2"/>
+                            </Style>
+                            <Style TargetType="Ellipse">
+                                <Setter Property="Stroke" Value="Green"/>
+                                <Setter Property="StrokeThickness" Value="2"/>
+                            </Style>
+                        </Canvas.Resources>
+                    </Canvas>
+                    <InkCanvas x:Name="inkCanvas1" Width="{Binding ActualWidth, ElementName=gridBox}" Height="{Binding ActualHeight, ElementName=gridBox}"/>
+                </Grid>
+            </Grid>
+
+
+
+
+
+
+
+
+
+            <Button x:Name="CH9"  Foreground="Azure" Click="CHCallBack9" BorderBrush="#03A9F4" IsEnabled="True" FontSize="18" Canvas.Left="554" Canvas.Top="580" Height="35" Width="214" CornerRadius="5" VerticalAlignment="Top" Margin="605,114,0,0" >
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="-5,-10,0,-7">
+                    <TextBlock Text="zona 1" FontSize ="30" Foreground="#232222" Width="92" Height="36" FontWeight="Bold" UseLayoutRounding="True" VerticalAlignment="Top" />
+                    <TextBlock x:Name="lblScr1" Text="0.0" FontSize ="30" Foreground="#232222" FontWeight="Bold" Margin="10,0,0,0"  VerticalAlignment="Bottom" Height="42"/>
+                    <TextBlock Text="°C" FontSize ="30" Foreground="#232222" VerticalAlignment="Bottom" Height="42" FontWeight="Bold" Width="28"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="CH10"  Foreground="Azure" Click="CHCallBack10" BorderBrush="#3AFE00" IsEnabled="True" FontSize="18" Canvas.Left="554" Canvas.Top="580" Height="35" Width="214" CornerRadius="5" VerticalAlignment="Top" Margin="605,154,0,0" >
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="-5,-10,0,-7">
+                    <TextBlock Text="zona 2" FontSize ="30" Foreground="#232222" Width="94" Height="47" FontWeight="Bold" />
+                    <TextBlock x:Name="lblScr2" Text="0.0" FontSize ="30" Foreground="#232222" FontWeight="Bold" Margin="10,0,0,0"  VerticalAlignment="Bottom" Height="42"/>
+                    <TextBlock Text="°C" FontSize ="30" Foreground="#232222" VerticalAlignment="Bottom" Height="42" FontWeight="Bold"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="CH11"  Foreground="Azure" Click="CHCallBack11" BorderBrush="#FF00CD" IsEnabled="True" FontSize="18" Canvas.Left="554" Canvas.Top="580" Height="35" Width="214" CornerRadius="5" VerticalAlignment="Top" Margin="605,194,0,0" >
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="-5,-10,0,-7">
+                    <TextBlock Text="zona 3" FontSize ="30" Foreground="#232222" Width="91" Height="47" FontWeight="Bold" Margin="-10,-3,0,0" />
+                    <TextBlock x:Name="lblScr3" Text="0.0" FontSize ="30" Foreground="#232222" FontWeight="Bold" Margin="10,0,0,0"  VerticalAlignment="Bottom" Height="42"/>
+                    <TextBlock Text="°C" FontSize ="30" Foreground="#232222" VerticalAlignment="Bottom" Height="42" FontWeight="Bold"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="clearButton"  Foreground="Blue" Click="CHCallBack12" BorderBrush="Blue" IsEnabled="True" FontSize="18" Canvas.Left="554" Canvas.Top="510" Height="31" Width="214" CornerRadius="5" VerticalAlignment="Top" Margin="605,234,0,0" >
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="-5,-10,0,-7">
+                    <TextBlock Text="Borrar" FontSize ="30" Foreground="#232222" Width="165" Height="47" FontWeight="Bold" Margin="-10,-3,0,0" />
+                    <TextBlock x:Name="lblClear" Text="" FontSize ="34" Foreground="#232222" FontWeight="Bold" Margin="10,0,0,0"  VerticalAlignment="Bottom" Height="42"/>
+                    <TextBlock Text="" FontSize ="35" Foreground="#232222" VerticalAlignment="Bottom" Height="42" FontWeight="Bold"/>
+                </StackPanel>
+            </Button>
+
+
+
+        </Grid>
+        <StackPanel Orientation="Vertical">
+            <Grid x:Name="GridImg0" Background="#1A1A1A" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible">
+                <Image x:Name="FallaImg0"  Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible"/>
+                <Canvas x:Name="FallaCvs0" Background="Transparent" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible"/>
+            </Grid>
+            <Grid x:Name="GridImg1" Background="#1A1A1A" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible">
+                <Image x:Name="FallaImg1" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible"/>
+                <Canvas x:Name="FallaCvs1" Background="Transparent" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible"/>
+            </Grid>
+            <Grid x:Name="GridImg2" Background="#1A1A1A" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible">
+                <Image x:Name="FallaImg2" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible"/>
+                <Canvas x:Name="FallaCvs2" Background="Transparent" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible"/>
+            </Grid>
+            <Grid x:Name="GridImg3" Background="#1A1A1A" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible">
+                <Image x:Name="FallaImg3" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible"/>
+                <Canvas x:Name="FallaCvs3" Background="Transparent" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible"/>
+            </Grid>
+            <Grid x:Name="GridImg4" Background="#1A1A1A" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible">
+                <Image x:Name="FallaImg4" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible"/>
+                <Canvas x:Name="FallaCvs4" Background="Transparent" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible"/>
+            </Grid>
+            <Grid x:Name="GridImg5" Background="#1A1A1A" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible">
+                <Image x:Name="FallaImg5" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible"/>
+                <Canvas x:Name="FallaCvs5" Background="Transparent" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width ="420" Height="256" Visibility="Visible"/>
+            </Grid>
+        </StackPanel>
+        <ComboBox Width="120"/>
+    </StackPanel>
+</Page>
